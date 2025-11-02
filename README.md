@@ -1,8 +1,7 @@
-# FUTURE_CS_01
-Web Application Security Testing - Altoro Mutual vulnerability assessment. Identified XSS, weak credentials, and information disclosure vulnerabilities.
-
+🔒 Security Report - Web Application Testing
 
 📋 About the Project
+
 Security testing performed on the Altoro Mutual web application (demo.testfire.net) as part of the Future Interns program. The objective was to identify vulnerabilities following OWASP standards.
 
 🎯 Methodology
@@ -23,21 +22,21 @@ Security testing performed on the Altoro Mutual web application (demo.testfire.n
 ⚙️ Technology: Apache-Coyote/1.1
 
 🔓 Vulnerabilities Identified
-1. 🚨 Reflected Cross-Site Scripting (XSS)
+🔓 VULNERABILITY 1: Reflected Cross-Site Scripting (XSS)
 ⚠️ Severity: High
 📍 Location: Search field
 📝 Description: Malicious script executed in search field
 
-📸 Evidence:
-![XSS Popup Executed](xss-popup-executed-successfully.png)
-
 🔧 Reproduction:
 
 bash
-
 1. Access http://demo.testfire.net
 2. In Search field, type: <script>alert('XSS')</script>
 3. Observe script execution
+🔓 VULNERABILITY 2: Default/Weak Credentials
+⚠️ Severity: High
+📍 Location: Login page
+📝 Description: Default credentials allow unauthorized access
 
 🔓 Credentials Found:
 
@@ -45,34 +44,31 @@ bash
 
 🔒 Password: demo1234
 
-3. 📢 Information Disclosure
+🔓 VULNERABILITY 3: Information Disclosure
 🚨 Severity: Critical
 📍 Location: Login page source code
 📝 Description: Comment in source code reveals internal administration procedure
-
-📸 Evidence:
 
 💻 Code Excerpt:
 
 html
 <!-- To get the latest admin login, please contact SiteOps at 415-555-6159 -->
-
 🛡️ Recommendations
-🚨 For XSS:
+🚨 For VULNERABILITY 1 (XSS):
 🔒 Implement input sanitization
 
 🛡️ Use Content Security Policy (CSP)
 
 ✅ Validate and encode output data
 
-🔑 For Default Credentials:
+🔑 For VULNERABILITY 2 (Default Credentials):
 🗑️ Remove default credentials
 
 💪 Implement strong password policy
 
 🔐 Add multi-factor authentication
 
-📢 For Information Disclosure:
+📢 For VULNERABILITY 3 (Information Disclosure):
 🧹 Remove sensitive comments from source code
 
 🔍 Review all code for exposed information
@@ -80,27 +76,35 @@ html
 🚪 Implement proper access controls
 
 📊 OWASP Top 10 Compliance Checklist
-
-
-OWASP Top 10 2021
 🔓 A01: Broken Access Control
+
+Status: ⚠️ Partial
+
+Evidence: Admin test blocked
+
 🔐 A02: Cryptographic Failures
+
+Status: ✅ Found
+
+Evidence: 
+
 💉 A03: Injection
+
+Status: ✅ Found
+
+Evidence: Reflected XSS
+
 👤 A07: Identification & Authentication Failures
+
+Status: ✅ Found
+
+Evidence:
+
 ⚙️ A05: Security Misconfiguration
 
-📋 Testing Evidence
-📸 Additional Screenshots:
-🌐 Initial Page: https://screenshots/1-initial-page.png
+Status: ✅ Found
 
-💉 SQL Injection Test: https://screenshots/2-sql-injection-attempt-failed.png
-
-👤 Sign-in Page: https://screenshots/7-regular-user-signin.png
-
-🚫 Admin Access Error: https://screenshots/9-admin-access-error.png
-
-🔗 Login Page URL: https://screenshots/10-login-page-url.png
-
+Evidence: Information disclosure
 
 🚀 How to Reproduce
 📥 Clone this repository
@@ -109,6 +113,10 @@ OWASP Top 10 2021
 
 📋 Follow steps described in each vulnerability section
 
-📸 Check evidence in screenshots folder
+📸 Check evidence in the image files
 
 ✅ Verify findings using the same methodology
+
+*📄 Report developed for Future Interns program - Cybersecurity Task 1*
+🔒 Web Application Security Testing Project
+
