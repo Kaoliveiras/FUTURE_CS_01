@@ -21,7 +21,11 @@ Security testing performed on the Altoro Mutual web application (demo.testfire.n
 
 ⚙️ Technology: Apache-Coyote/1.1
 
+Evidence:
+![Sucuri Scan Results](sucuri-scan-result.png)
+
 🔓 Vulnerabilities Identified
+
 🔓 VULNERABILITY 1: Reflected Cross-Site Scripting (XSS)
 ⚠️ Severity: High
 📍 Location: Search field
@@ -33,6 +37,11 @@ bash
 1. Access http://demo.testfire.net
 2. In Search field, type: <script>alert('XSS')</script>
 3. Observe script execution
+
+Evidence:
+![XSS Popup Executed](xss-popup-executed-successfully.png)
+![XSS Exploitation Results](xss-exploitation-results.png)
+   
 🔓 VULNERABILITY 2: Default/Weak Credentials
 ⚠️ Severity: High
 📍 Location: Login page
@@ -44,12 +53,19 @@ bash
 
 🔒 Password: demo1234
 
+Evidence: 
+![JSmith Login](jsmith-login-success.png)
+
+
 🔓 VULNERABILITY 3: Information Disclosure
 🚨 Severity: Critical
 📍 Location: Login page source code
 📝 Description: Comment in source code reveals internal administration procedure
 
 💻 Code Excerpt:
+![Login Page URL](login-page-url.png)
+![Code Vulnerability](line97-code-vulnerability.png)
+
 
 html
 <!-- To get the latest admin login, please contact SiteOps at 415-555-6159 -->
