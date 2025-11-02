@@ -29,6 +29,7 @@ Security testing performed on the Altoro Mutual web application (demo.testfire.n
 📝 Description: Malicious script executed in search field
 
 📸 Evidence:
+![XSS Popup Executed](xss-popup-executed-successfully.png)
 
 🔧 Reproduction:
 
